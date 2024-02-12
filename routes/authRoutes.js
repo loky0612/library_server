@@ -6,7 +6,7 @@ const {test, addUser, getDetails, deleteStudent} = require('../controllers/authC
 router.use(
     cors({
         credentials : true,
-        origin : 'hhttp://lokyemployee.s3-website.ap-south-1.amazonaws.com'
+        origin : 'http://lokyemployee.s3-website.ap-south-1.amazonaws.com'
     })
 );
 
