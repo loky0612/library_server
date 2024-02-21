@@ -6,7 +6,7 @@ const { getBooks } = require('../controllers/authControllers');
 router.use(
     cors({
         credentials : true,
-        origin : 'http://localhost:3000'
+        origin : 'http://librarymanagementapp.s3-website.ap-south-1.amazonaws.com'
     })
 );
 
