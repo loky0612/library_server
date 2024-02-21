@@ -5,16 +5,18 @@ const test = (req,res) => {
     res.json("Test is working");
 }
 
-
-const addUser = (req, res) => {
-    const details = req.body;
-    const rollno = details.roll_no;
-    if (rollno.length < 12) {
+const addEmp = (req, res) => {
+    const {id, name, dept, dob, gender, desig, salary} = req.body;
+    if (name.length > 30) {
         console.log("error");
-        return res.json("Roll Number should not be less than 12");
+        return res.json("Employee name should not exceed 30 characters");
     }
-    let sql = "INSERT into employee (name, year, dept, contact, cgpa, roll_no) VALUES (?,?,?,?,?,?)";
-    let values = [details.name, details.year, details.dept, details.contact, details.cgpa, details.roll_no];
+    if (salary.length > 8) {
+        console.log("error");
+        return res.json("Employee salary should not exceed 8 digits");
+    }
+    let sql = "INSERT into emp_details (id, name, dept, dob, gender, desig, salary) VALUES (?,?,?,?,?,?,?)";
+    let values = [id, name, dept, dob, gender, desig, salary];
     console.log(values);
     try {
         db.query(sql, values, (err) => {
@@ -28,8 +30,8 @@ const addUser = (req, res) => {
     }
 }
 
-const getDetails = (req, res) => {
-    let sql = "SELECT * From employee";
+const getEmp= (req, res) => {
+    let sql = "SELECT * From emp_details";
     try {
         db.query(sql, (err, results) => {
             if (err) throw err;
@@ -40,7 +42,8 @@ const getDetails = (req, res) => {
     }
 }
 
-const deleteStudent = (req,res) => {
+
+const deleteEmp = (req,res) => {
     const id = req.body.id;
     let sql = "DELETE FROM employee WHERE contact = ?";
     try {
@@ -56,7 +59,7 @@ const deleteStudent = (req,res) => {
 
 module.exports = {
     test,
-    addUser,
-    getDetails,
-    deleteStudent
+    addEmp,
+    getEmp,
+    deleteEmp
 }
