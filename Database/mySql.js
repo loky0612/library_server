@@ -4,6 +4,7 @@ const connection = db.createConnection({
     host : 'localhost',
     user : 'root',
     password : '1234',
-    database : 'emp'
+    database : 'library'
 })
-module.exports = connection
+
+module.exports = connection;

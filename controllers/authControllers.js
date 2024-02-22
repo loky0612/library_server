@@ -1,10 +1,10 @@
 const db = require('../Database/mySql');
 
 const test = (req,res) => {
-    console.log("test is working");
-    res.json("Test is working");
+    res.json("Test Working");
 }
 
+<<<<<<< HEAD
 const addEmp = (req, res) => {
     const {id, name, dept, dob, gender, desig, salary} = req.body;
     if (name.length > 30) {
@@ -32,6 +32,10 @@ const addEmp = (req, res) => {
 
 const getEmp= (req, res) => {
     let sql = "SELECT * From emp_details";
+=======
+const getBooks = (req, res) => {
+    let sql = "SELECT * From books";
+>>>>>>> 8ee44632c1c129f300b4e00d31b6ebf0731a44ca
     try {
         db.query(sql, (err, results) => {
             if (err) throw err;
@@ -42,6 +46,7 @@ const getEmp= (req, res) => {
     }
 }
 
+<<<<<<< HEAD
 
 const deleteEmp = (req,res) => {
     const id = req.body.id;
@@ -63,3 +68,10 @@ module.exports = {
     getEmp,
     deleteEmp
 }
+=======
+
+module.exports = {
+    getBooks,
+    test
+}
+>>>>>>> 8ee44632c1c129f300b4e00d31b6ebf0731a44ca
