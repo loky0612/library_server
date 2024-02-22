@@ -6,7 +6,7 @@ const {test, addEmp, getEmp, deleteEmp} = require('../controllers/authController
 router.use(
     cors({
         credentials : true,
-        origin : 'http://emp-management-app.s3-website.ap-south-1.amazonaws.com'
+        origin : 'http://localhost:3001'
     })
 );
 
