@@ -1,5 +1,9 @@
 const db = require('../Database/mySql');
 
+const test = (req,res) => {
+    res.json("Test Working");
+}
+
 const getBooks = (req, res) => {
     let sql = "SELECT * From books";
     try {
