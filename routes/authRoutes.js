@@ -10,6 +10,7 @@ router.use(
     })
 );
 
+router.get('/',test);
 router.get('/getBooks',getBooks);
 router.get('/getCardMembers',getCardMembers);
 router.get('/books',books);
