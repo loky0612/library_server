@@ -6,7 +6,7 @@ const { getBooks, addBooks, addCard, checkUniqueness, getCardMembers, checkUser,
 router.use(
     cors({
         credentials : true,
-        origin : 'http://localhost:3000'
+        origin : 'http://librarymanagementapp.s3-website.ap-south-1.amazonaws.com'
     })
 );
 
