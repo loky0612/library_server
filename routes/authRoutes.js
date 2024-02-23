@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors');
-const { getBooks, addBooks, addCard, checkUniqueness, getCardMembers, checkUser, books, addRent, getRentals } = require('../controllers/authControllers');
+const { test, getBooks, addBooks, addCard, checkUniqueness, getCardMembers, checkUser, books, addRent, getRentals } = require('../controllers/authControllers');
 
 router.use(
     cors({
