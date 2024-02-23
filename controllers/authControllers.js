@@ -137,6 +137,7 @@ const getRentals = (req,res) => {
 
 
 module.exports = {
+    test,
     getBooks,
     addBooks,
     addCard,
